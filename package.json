@@ -1,0 +1,30 @@
+{
+  "name": "portfolio-vinicius-dev",
+  "version": "1.0.0",
+  "description": "Portfólio Profissional - Vinícius Santana | Software Engineer Full Stack & Cloud",
+  "main": "server/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
+  },
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "java",
+    "aws",
+    "fullstack"
+  ],
+  "author": "Vinícius Santana Lima",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}

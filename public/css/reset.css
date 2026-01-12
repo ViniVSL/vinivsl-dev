@@ -1,0 +1,86 @@
+/* =====================
+   RESET & MODERNO
+===================== */
+
+/* 1. Box sizing global para facilitar cálculos de layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Scroll suave e ajuste de texto mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+/* 3. Estabilidade do Body */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+/* 4. Elementos de mídia flexíveis */
+img, 
+picture, 
+video, 
+canvas, 
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. Reset de tipografia em formulários */
+input, 
+button, 
+textarea, 
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 6. Remoção de estilos de lista (essencial para o Menu centralizado) */
+ul, 
+ol {
+  list-style: none;
+}
+
+/* 7. Reset de Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* 8. Reset de Botões */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 9. Remoção de animações para usuários que preferem redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

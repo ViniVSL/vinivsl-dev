@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Vinícius Santana - Engenheiro de Software Full Stack & Cloud.">
+    <title>Vinícius Santana | Software Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="container nav">
+            <a href="#" class="logo">VINICIUS<span>.DEV</span></a>
+            <ul class="menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#skills">Tecnologias</a></li>
+                <li><a href="#certificacoes">Formação</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <a href="https://wa.me/5513996772869" target="_blank" class="badge-tech">
+                <div class="glow-point"></div>
+                <img src="images/hero/whatsapp.png" alt="WhatsApp" width="18">
+                <span>DISPONÍVEL PARA NOVOS DESAFIOS</span>
+            </a>
+
+            <h1 class="glitch-text">
+                <span class="hover-char">Software Engineer</span> <br>
+                <span class="highlight hover-char">Full Stack & Cloud</span>
+            </h1>
+
+            <p>Especialista no ecossistema <strong>Java (Spring Boot)</strong> e arquiteturas escaláveis na <strong>AWS</strong>. Foco em redução de custos e alta disponibilidade.</p>
+
+            <div class="btns">
+              <a href="https://github.com/ViniVSL" class="btn-tech btn-primary" target="_blank" rel="noopener noreferrer">
+                <img src="images/hero/github.png" alt="GitHub" width="20"> VER PORTFÓLIO
+               </a>
+            </div>
+        </section>
+
+<section id="sobre" class="section-spacer" style="position: relative; overflow: hidden;">
+    <canvas id="canvas-particles" style="position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none;"></canvas>
+    
+    <div class="container about-wrapper" style="position: relative; z-index: 1;">
+              <h2 class="section-title">Sobre Mim</h2>
+        
+        <div class="about-content">
+            <p class="about-lead typewriter">
+                <span>Olá, me chamo Vinícius Santana e sou apaixonado em </span> 
+                <span class="tech-highlight type-text">tranformar lógica complexa em eficiência operacional. </span>
+            </p>
+            
+            <div class="about-text-terminal">
+                <p>
+                    Sou um Desenvolvedor de Software especialista no ecossistema 
+                    <span class="tech-word" data-info="Spring Boot / APIs REST">Java</span>, 
+                    focado na construção de <span class="tech-word" data-info="Escalabilidade & Resiliência">microsserviços</span> 
+                    e infraestruturas robustas em nuvem com <span class="tech-word" data-info="EC2, S3, Lambda">AWS</span>.
+                </p>
+                
+                <p>
+                    Minha abordagem une o rigor do <span class="tech-word" data-info="Código Limpo">Clean Code</span> 
+                    à entrega de resultados mensuráveis, como a automação de processos que gerou 
+                    <span class="tech-highlight">20% de ganho operacional</span> em sistemas de gestão.
+                </p>
+            </div>
+            
+            <div class="about-footer-line">
+                <span>Software Engineering</span> • <span>Cloud Computing</span> • <span>Clean Architecture</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="skills" class="testimonials">
+            <div class="container">
+                <div class="testimonials-header">
+                    <h2 class="section-title">Tecnologias</h2>
+                    <div class="slider-controls">
+                        <button class="prev-btn">‹</button>
+                        <button class="next-btn">›</button>
+                    </div>
+                </div>
+
+                <div class="testimonials-wrapper">
+                    <div class="testimonials-track">
+                        <article class="testimonial-card">
+                            <h3 class="tech-stack-header">Linguagens & Frameworks</h3>
+                            <div class="tech-icons-grid">
+                                <div class="tech-item"><img src="images/tecnologia/java.png" alt="Java"><span>Java</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/spring.png" alt="Spring"><span>Spring Boot</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/python.png" alt="Python"><span>Python</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/django.png" alt="Django"><span>Django</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/javascript.png" alt="JS"><span>JavaScript</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/nodejs.png" alt="Node"><span>Node.js</span></div>
+                            </div>
+                        </article>
+
+                        <article class="testimonial-card">
+                            <h3 class="tech-stack-header">Cloud & DevOps</h3>
+                            <div class="tech-icons-grid">
+                                <div class="tech-item"><img src="images/tecnologia/aws.png" alt="AWS"><span>AWS</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/docker.png" alt="Docker"><span>Docker</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/git.png" alt="Git"><span>CI/CD</span></div>
+                            </div>
+                        </article>
+
+                        <article class="testimonial-card">
+                            <h3 class="tech-stack-header">Bancos de Dados</h3>
+                            <div class="tech-icons-grid">
+                                <div class="tech-item"><img src="images/tecnologia/mysql.png" alt="MySQL"><span>MySQL</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
+                                <div class="tech-item"><img src="images/tecnologia/sql-server.png" alt="SQL Server"><span>SQL Server</span></div>
+                            </div>
+                        </article>
+
+                        <article class="testimonial-card">
+                            <h3 class="tech-stack-header">Qualidade & Arquitetura</h3>
+                            <ul class="quality-list-alt">
+                                <li>Microsserviços & APIs REST</li>
+                                <li>Clean Code & SOLID</li>
+                                <li>Testes Automatizados</li>
+                                <li>Cloud Native Patterns</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="testimonials-dots"></div>
+            </div>
+        </section>
+
+        <section id="certificacoes" class="container section-spacer">
+            <div class="section-header-flex">
+                <h2 class="section-title">Formação & Certificações</h2>
+                <div class="slider-controls">
+                    <button class="nav-arrow prev-cert">‹</button>
+                    <button class="nav-arrow next-cert">›</button>
+                </div>
+            </div>
+
+            <div class="cert-wrapper">
+                <div class="cert-track">
+                    <a href="https://www.dio.me/certificate/9BXNRHHH/share" target="_blank" class="cert-card">
+                        <div class="cert-icon">🎓</div>
+                        <h3>Java & Cloud</h3>
+                        <p class="institution">Accenture & DIO</p>
+                        <span class="cert-link">Ver Certificado</span>
+                    </a>
+                    <a href="https://www.dio.me/certificate/6X61YCAE/share" target="_blank" class="cert-card">
+                        <div class="cert-icon">🛡️</div>
+                        <h3>Java & QA Developer</h3>
+                        <p class="institution">Tech Bradesco & DIO</p>
+                        <span class="cert-link">Ver Certificado</span>
+                    </a>
+                    <a href="https://www.dio.me/certificate/1HLVN5E3/share" target="_blank" class="cert-card">
+                        <div class="cert-icon">📊</div>
+                        <h3>Python & Data Science</h3>
+                        <p class="institution">Tech Santander & DIO</p>
+                        <span class="cert-link">Ver Certificado</span>
+                    </a>
+                    <a href="https://www.udemy.com/certificate/UC-f3c89dc3-f1a9-4c89-873b-2a5990c3890a/" target="_blank" class="cert-card">
+                        <div class="cert-icon">☁️</div>
+                        <h3>Spring Boot & AWS</h3>
+                        <p class="institution">Udemy</p>
+                        <span class="cert-link">Ver Certificado</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="container section-spacer">
+            <div class="section-header-flex">
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <div class="slider-controls">
+                    <button class="nav-arrow prev-proj">‹</button>
+                    <button class="nav-arrow next-proj">›</button>
+                </div>
+            </div>
+
+            <div class="projects-wrapper">
+                <div class="projects-track">
+                    <a href="https://github.com/ViniVSL/estoque-api" target="_blank" class="repo-card">
+                        <h3>Estoque API : Segurança e Performance com Spring Boot</h3>
+                        <p>Desenvolvi uma API RESTful para gestão de inventário, priorizando a segurança e a escalabilidade. 
+                           Contém autenticação JWT, arquitetura desacoplada com DTOs e persistência otimizada com Spring Data JPA. 
+                           Alertas de estoque crítico e gestão de credenciais via variáveis de ambiente.</p>
+                        <span class="repo-link">Ver Código →</span>
+                    </a>
+                    <a href="https://github.com/ViniVSL/santander-etl-project" target="_blank" class="repo-card">
+                        <h3>Pipeline ETL : Automação de Marketing com Python</h3>
+                        <p>Desenvolvi um ecossistema focado na integração entre Engenharia e Ciência de Dados. 
+                           O projeto automatiza a extração de dados, aplica personalização em 
+                           massa e estrutura o carregamento para sistemas de CRM. 
+                           Solução que transforma dados em inteligência de vendas.</p>
+                        <span class="repo-link">Ver Código →</span>
+                    </a>
+                    <a href="https://github.com/ViniVSL/projeto-aws-farmacia-virtual" target="_blank" class="repo-card">
+                        <h3>Arquitetura Cloud AWS : Alta Disponibilidade e Escalabilidade</h3>
+                        <p>Implementei uma infraestrutura para um e-commerce focada em resiliência e eficiência financeira. 
+                           Utilizei EC2 Auto Scaling e Load Balancing para picos de tráfego, Amazon RDS para dados críticos 
+                           e S3 Intelligent-Tiering para otimização automática de custos de armazenamento.</p>
+                        <span class="repo-link">Ver Código →</span>
+                    </a>
+                    <article class="repo-card combo">
+                        <h3>Business Logic Core : Soluções Práticas em Java</h3>
+                        <p>Desenvolvi um ecossistema para operações corporativas: Finanças, Logística e Vendas. 
+                           Criei motores de cálculo para juros diários com precisão temporal, gestão de inventário e automação de comissões de vendas. 
+                           Prontos para serem escalados para arquiteturas de microsserviços.</p>
+                        <div class="combo-links">
+                            <a href="https://github.com/ViniVSL/comissao-vendedores" target="_blank">COMISSÃO</a>
+                            <a href="https://github.com/ViniVSL/controle-estoque" target="_blank">ESTOQUE</a>
+                            <a href="https://github.com/ViniVSL/calculadora-juros" target="_blank">JUROS</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="footer">
+        <div class="container">
+            <p class="logo">VINICIUS<span>.DEV</span></p>
+            <p>© 2026 Todos os direitos reservados</p>
+            <div class="contact-icons">
+                <a href="mailto:vinicius.santana.lima16@gmail.com"><img src="images/contato/gmail.png" alt="Email" width="35"></a>
+                <a href="https://wa.me/5513996772869" target="_blank"><img src="images/contato/whatsapp.png" alt="WhatsApp" width="35"></a>
+                <a href="https://www.linkedin.com/in/vinivsl-dev" target="_blank"><img src="images/contato/linkedin.png" alt="LinkedIn" width="35"></a>
+                <a href="https://github.com/ViniVSL" target="_blank"><img src="images/contato/github.png" alt="GitHub" width="35"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
