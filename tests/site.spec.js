@@ -4,15 +4,15 @@ test.describe('Portfólio Vinícius Santana - Testes de Regressão Visual e Lóg
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
-    // Espera o carregamento completo da rede para garantir que o particles.js e fontes subiram
+    // Espera o carregamento para garantir que o particles.js e fontes subiram
     await page.waitForLoadState('networkidle');
   });
 
   test('Deve validar o Header e a Identidade Visual', async ({ page }) => {
-    // Verifica o título da página (SEO)
+    // Verifica o título da página
     await expect(page).toHaveTitle(/Vinícius Santana | Software Engineer/);
 
-    // Verifica se a logo está renderizada corretamente
+    // Verifica se a logo está renderizada
     const logo = page.locator('.logo').first();
     await expect(logo).toContainText('VINICIUS');
     await expect(logo.locator('span')).toHaveText('.DEV');
@@ -21,17 +21,16 @@ test.describe('Portfólio Vinícius Santana - Testes de Regressão Visual e Lóg
   test('Deve validar a animação Typewriter (Intersection Observer)', async ({ page }) => {
     const typewriter = page.locator('.type-text');
 
-    // De acordo com seu main.js, ela começa PAUSADA
+    // Começa PAUSADA
     const initialState = await typewriter.evaluate(el => window.getComputedStyle(el).animationPlayState);
     expect(initialState).toBe('paused');
 
-    // Rola a página para baixo para disparar o IntersectionObserver
+    // Dispara o IntersectionObserver
     await typewriter.scrollIntoViewIfNeeded();
 
-    // Aguarda a execução da lógica do script main.js
+    // Execução da lógica do script main.js
     await page.waitForTimeout(500);
 
-    // Agora a animação deve estar rodando (running)
     const activeState = await typewriter.evaluate(el => window.getComputedStyle(el).animationPlayState);
     expect(activeState).toBe('running');
   });
@@ -46,13 +45,13 @@ test.describe('Portfólio Vinícius Santana - Testes de Regressão Visual e Lóg
     const track = page.locator('.testimonials-track');
     const nextBtn = page.locator('.next-btn');
 
-    // Captura a posição inicial (transform) do trilho
+    // Captura a posição inicial do trilho
     const initialTransform = await track.evaluate(el => window.getComputedStyle(el).transform);
 
     // Clica no botão "Próximo"
     await nextBtn.click();
 
-    // Aguarda o tempo da transição CSS (0.6s no seu style.css)
+    // Aguarda o tempo da transição CSS
     await page.waitForTimeout(700);
 
     // Captura a nova posição e compara
@@ -75,22 +74,18 @@ test.describe('Portfólio Vinícius Santana - Testes de Regressão Visual e Lóg
   });
 
   test('Responsividade: Menu deve ser ocultado em telas mobile', async ({ page }) => {
-    // Define o viewport para mobile (abaixo dos 768px do seu @media query)
+    // Define o viewport para mobile
     await page.setViewportSize({ width: 480, height: 800 });
 
     const menu = page.locator('.menu');
-    // Verifica se o display: none foi aplicado
     await expect(menu).not.toBeVisible();
   });
 
   test('Deve validar a revelação de elementos ao rolar (Reveal Animation)', async ({ page }) => {
     const projectCard = page.locator('.repo-card').first();
     
-    // Antes de rolar, a classe .visible não deve estar presente ou a opacidade deve ser baixa
-    // (O Playwright lida com isso automaticamente ao tentar interagir)
     await projectCard.scrollIntoViewIfNeeded();
     
-    // Verifica se a classe .visible foi injetada pelo main.js
     await expect(projectCard).toHaveClass(/visible/);
     await expect(projectCard).toBeVisible();
   });
@@ -98,15 +93,15 @@ test.describe('Portfólio Vinícius Santana - Testes de Regressão Visual e Lóg
 test('Deve garantir que os cards de certificação fiquem visíveis após o scroll', async ({ page }) => {
     const certCard = page.locator('.cert-card').first();
     
-    // Rola até o card para disparar o IntersectionObserver
+    // Dispara o IntersectionObserver
     await certCard.scrollIntoViewIfNeeded();
     
-    // 1. Em vez de checar a classe, esperamos o Playwright confirmar que o elemento está visível
-    // O Playwright espera automaticamente até que a opacidade seja > 0
+    // 1. Playwright confirma que o elemento está visível
+    // O Playwright espera até que a opacidade seja > 0
     await expect(certCard).toBeVisible();
 
-    // 2. Para lidar com a transição de 0.8s do seu CSS, usamos o toHaveCSS
-    // Isso faz o Playwright "tentar de novo" até que o valor chegue exatamente em 1
+    // 2. Transição de 0.8s do CSS
+    // Playwright tenta até o valor chegar em 1
     await expect(certCard).toHaveCSS('opacity', '1', { timeout: 10000 });
 
     // 3. Verifica se a classe .visible foi aplicada
