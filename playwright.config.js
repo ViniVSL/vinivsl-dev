@@ -8,19 +8,19 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
 
-  /* Configurações globais para os testes */
+  /* Configurações para os testes */
   use: {
     baseURL: 'http://localhost:3001',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    // Tempo de espera para elementos aparecerem (ajudando com animações)
+    // Tempo para elementos aparecerem
     actionTimeout: 5000,
   },
 
   /* Tempo máximo para cada teste individual */
   timeout: 40000,
   expect: {
-    // Timeout para asserções (importante para o efeito typewriter de 3.5s)
+    // Timeout para asserções
     timeout: 8000,
   },
 
@@ -37,7 +37,7 @@ module.exports = defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-    /* Teste Mobile - Crucial para validar o sumiço do menu @media 768px */
+    /* Teste Mobile */
     {
       name: 'mobile-safari',
       use: { ...devices['iPhone 12'] },
