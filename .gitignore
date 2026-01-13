@@ -1,9 +1,9 @@
-# Dependências (Nunca envie a pasta node_modules)
+# Dependências
 node_modules/
 dist/
 build/
 
-# Configurações sensíveis (Segurança)
+# Configurações sensíveis
 .env
 .env.local
 .env.production
