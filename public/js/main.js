@@ -1,5 +1,5 @@
 /**
- * PORTFÓLIO - SCRIPT PRINCIPAL
+ * SCRIPT PRINCIPAL
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 100, // Quantidade de pontos (ajuste para densidade)
+      "value": 100, // Quantidade de pontos
       "density": { "enable": true, "value_area": 800 }
     },
-    "color": { "value": "#888888" }, // Cor neutra que se adapta a fundos claros/escuros
+    "color": { "value": "#888888" }, // Cor que se adapta a fundos claros/escuros
     "shape": { "type": "circle" },
     "opacity": {
       "value": 0.5,
@@ -49,13 +49,13 @@ particlesJS("particles-js", {
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#888888", // Cor das linhas da teia
+      "color": "#888888", // Cor da teia
       "opacity": 0.4,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 2, // Velocidade tecnológica suave
+      "speed": 2, // Velocidade suave
       "direction": "none",
       "random": false,
       "straight": false,
@@ -82,14 +82,13 @@ particlesJS("particles-js", {
 });
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "rgba(56, 189, 248, 0.5)"; // Cor das partículas (accent-blue)
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.1)"; // Cor das linhas
+        ctx.fillStyle = "rgba(56, 189, 248, 0.5)"; 
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.1)";
 
         particles.forEach((p, i) => {
             p.x += p.vx;
             p.y += p.vy;
 
-            // Rebater nas bordas
             if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
             if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
@@ -97,7 +96,6 @@ particlesJS("particles-js", {
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
 
-            // Desenhar linhas entre partículas próximas
             for (let j = i + 1; j < particles.length; j++) {
                 const p2 = particles[j];
                 const dx = p.x - p2.x;
@@ -120,13 +118,13 @@ particlesJS("particles-js", {
     draw();
 });
 
-    /* Animação de Digitação (Typewriter) ao entrar na tela */
+    /* Animação Typewriter ao entrar */
     const typeTextElement = document.querySelector('.type-text');
 
     const typeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Reinicia a animação ao entrar na tela (opcional) ou apenas inicia
+            // Reinicia a animação ao entrar na tela
             entry.target.style.animationPlayState = 'running';
         }
     });
@@ -134,11 +132,10 @@ particlesJS("particles-js", {
     });
 
         if (typeTextElement) {
-    typeTextElement.style.animationPlayState = 'paused'; // Começa pausada
+    typeTextElement.style.animationPlayState = 'paused'; 
     typeObserver.observe(typeTextElement);
 }
     
-    // Efeito de Header ao Rolar
     const header = document.querySelector('.header');
     const handleHeaderScroll = () => {
         if (window.scrollY > 80) {
@@ -152,7 +149,7 @@ particlesJS("particles-js", {
         }
     };
 
-    // Interatividade no Hero (Hover Glow)
+    // Interatividade no Hero
     const heroTexts = document.querySelectorAll('.hover-char');
     heroTexts.forEach(text => {
         text.addEventListener('mouseenter', () => text.style.filter = "drop-shadow(0 0 12px var(--accent-blue))");
@@ -195,7 +192,7 @@ particlesJS("particles-js", {
         let index = 0;
 
         const update = () => {
-    if (!items.length || items[0].offsetWidth === 0) return; // Evita erro de cálculo zero
+    if (!items.length || items[0].offsetWidth === 0) return;
     const itemWidth = items[0].offsetWidth + 20; 
     track.style.transform = `translateX(-${index * itemWidth}px)`;
 };
@@ -212,7 +209,6 @@ particlesJS("particles-js", {
             update();
         });
 
-        // Retorna a função de update para ser usada no resize global
         return update;
     };
 
@@ -222,7 +218,7 @@ particlesJS("particles-js", {
     const updateProjects = setupCarousel('.projects-track', '.prev-proj', '.next-proj', '.projects-wrapper');
 
 
-    /* --- 4. ANIMAÇÕES DE REVELAÇÃO (INTERSECTION OBSERVER) --- */
+    /* --- 4. ANIMAÇÕES DE REVELAÇÃO --- */
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -241,13 +237,12 @@ particlesJS("particles-js", {
         revealObserver.observe(el);
     });
 
-    // CSS Injetado para animação de revelação
     const style = document.createElement('style');
     style.innerHTML = `.visible { opacity: 1 !important; transform: translateY(0) !important; }`;
     document.head.appendChild(style);
 
 
-    /* --- 5. EVENTOS GLOBAIS (SCROLL E RESIZE) --- */
+    /* --- 5. EVENTOS GLOBAIS --- */
 
     window.addEventListener('scroll', handleHeaderScroll);
 
