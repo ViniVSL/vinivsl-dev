@@ -40,12 +40,11 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1; /* Garante que fique atrás de ícones e textos */
-  background-color: transparent; /* Permite que a cor do seu site apareça */
-  pointer-events: none; /* Evita que o efeito bloqueie cliques em botões */
+  z-index: -1;
+  background-color: transparent; 
+  pointer-events: none; 
 }
 
-/* Opcional: Melhora o contraste das letras sobre o efeito */
 body {
   position: relative;
   z-index: 1;
@@ -453,7 +452,7 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
 .tech-stack-header {
     font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 0.95rem;
-    color: #00d4ff; /* Azul Ciano Tech */
+    color: #00d4ff;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 2rem;
@@ -495,10 +494,10 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
 }
 
 .tech-item span {
-    font-family: 'Inter', sans-serif; /* Fonte limpa e moderna */
+    font-family: 'Inter', sans-serif; 
     font-size: 0.75rem;
     font-weight: 600;
-    color: #a0a0b0; /* Cinza azulado */
+    color: #a0a0b0; 
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
@@ -537,7 +536,7 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
 }
 
 .quality-list-alt li::before {
-    content: "◈"; /* Detalhe tecnológico */
+    content: "◈"; 
     color: #00d4ff;
     margin-right: 12px;
     font-size: 0.7rem;
@@ -614,7 +613,7 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
 }
 
 /* ==========================================================================
-   9. ESTILIZAÇÃO AVANÇADA SOBRE MIM
+   9. ESTILIZAÇÃO SOBRE MIM
    ========================================================================== */
 .about-wrapper {
     display: flex;
@@ -622,7 +621,7 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
     align-items: center;
     text-align: center;
     max-width: 900px !important;
-    margin-bottom: 120px; /* Espaço extra para a próxima sessão */
+    margin-bottom: 120px; 
 }
 
 .about-lead {
@@ -649,7 +648,7 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
     text-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
 }
 
-/* Palavras Interativas (Tech-Words) */
+/* Palavras Interativas */
 .tech-word {
     color: var(--accent-blue);
     cursor: help;
@@ -665,7 +664,7 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
     border-bottom: 1px solid var(--accent-blue);
 }
 
-/* Tooltip tecnológico (opcional, aparece ao passar o mouse) */
+/* Tooltip tecnológico */
 .tech-word::after {
     content: attr(data-info);
     position: absolute;
@@ -699,12 +698,12 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
     opacity: 0.6;
 }
 #sobre {
-    /* Gradiente sutil para dar profundidade ao canvas */
+    /* Para dar profundidade ao canvas */
     background: radial-gradient(circle at center, rgba(30, 41, 59, 0.2) 0%, transparent 70%);
 }
 
 .about-text-terminal {
-    /* Aumentar um pouco o blur para destacar as partículas passando atrás */
+    /* Aumentar o blur para destacar as partículas */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -718,25 +717,25 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
 
 .type-text {
     position: relative;
-    white-space: nowrap; /* Garante que o texto não quebre durante a digitação */
-    border-right: 3px solid var(--accent-color); /* O cursor piscante */
+    white-space: nowrap; 
+    border-right: 3px solid var(--accent-color); 
     width: 0;
-    overflow: hidden; /* Esconde o texto que ainda não foi "digitado" */
+    overflow: hidden; 
     display: inline-block;
     vertical-align: bottom;
     animation: 
-        typing 3.5s steps(30, end) forwards,
-        blink-caret 0.75s step-end infinite;
-    animation-delay: 1s; /* Espera o usuário rolar ou a página carregar */
+    typing 3.5s steps(30, end) forwards,
+    blink-caret 0.75s step-end infinite;
+    animation-delay: 1s; 
 }
 
-/* Animação para "escrever" o texto */
+/* Animação para escrever */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
-/* Animação para o cursor piscar */
+/* Animação para o cursor */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--accent-color) }
@@ -782,10 +781,10 @@ h1 .highlight { color: var(--accent-blue); text-shadow: 0 0 25px rgba(56, 189, 2
 
 @media (max-width: 600px) {
     .type-text {
-        white-space: normal; /* Permite quebra se o texto for muito longo no mobile */
+        white-space: normal;
         border-right: none;
         width: auto;
-        animation: fade-in 2s ease forwards; /* Fallback simples para telas muito pequenas */
+        animation: fade-in 2s ease forwards; /* Fallback para telas pequenas */
     }
 }
 
